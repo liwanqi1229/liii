@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#name{color:red;font-size: 36px;}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>抽奖：<strong id="name">豪华大奖等你拿</strong> </li>
+		<li><button id="btn">点击抽奖</button></li>
+	</ul>
+	<script>
+		var oName=document.getElementById("name");
+		var oBtn=document.getElementById("btn");
+		var gift=["劳力士手表","电脑","施华洛世奇项链","AHC水乳套盒","iphone20","diro口红套盒","AJ1","LV老花包","mac","小黑瓶","外星人笔记本","组合音响"];
+		var i=0;
+
+		oBtn.onclick=function(){
+			oBtn.disabled=true;
+			view();
+		}
+		function view(){
+			i++;
+			console.log(i);
+
+			if(i<12){  	//递归条件
+				setTimeout(view,200);	//递归前进段
+			}else{
+				i=0;
+				oBtn.disabled=false;
+			}
+			//递归后半段
+			var rand=parseInt(Math.random()*gift.length);  //数组的随机下标
+			oName.innerHTML=gift[rand];
+		
+
+
+		}
+		
+
+	</script>
+	
+</body>
+</html>

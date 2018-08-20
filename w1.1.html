@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		demo(5);
+		
+		function demo(num){
+			document.write(num+'<br />');
+			if(num>0){  //递归的边界条件
+				demo(num-1);   //递归的前进段
+			}else{
+				document.write('----------<br />');
+			}
+			document.write(num+'<br />');   //递归的返回段
+		}
+
+
+
+
+			/*for(var i=10;i>=0;i--){
+				document.write(i+'<br />');
+
+			}*/
+		
+
+	</script>
+	
+</body>
+</html>
